@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Idealization — Why Raindrops Don't Hurt</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.9.0/p5.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .right {
+      flex-direction: row;
+      align-items: flex-start;
+      justify-content: flex-start;
+      padding: calc(20 * 0.125vw);                    /* fixed */
+      gap: calc(20 * 0.125vw);                        /* fixed */
+    }
+    #canvas-wrapper {
+      width: 50%;
+      height: calc(100vh - calc(180 * 0.125vw));      /* fixed */
+      flex-shrink: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .black {
+      flex: 1;
+      max-width: calc(340 * 0.125vw);                 /* fixed */
+      height: auto;
+      align-self: center;
+    }
+    .black p {
+      font-size: calc(0.0186 * 100vw);                  /* fixed */
+    }
+  </style>
+</head>
+<body>
+<div class="main">
+
+  <div class="tab">
+    <img class="logo" src="tifr-logo-black.png" alt="TIFR">
+    <div class="steps">
+      <div class="step done"><img src="sky.webp"><span>Reality</span></div>
+      <div class="step active"><img src="2.webp"><span>Idealization</span></div>
+      <div class="step"><img src="3.webp"><span>Discretisation</span></div>
+      <div class="step"><img src="4.webp"><span>Geometry</span></div>
+      <div class="step"><img src="5.webp"><span>Algebra</span></div>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="left">
+      <h2>Idealization</h2>
+<p> And what decides how fast it drifts around in that circle while leaning?</p>
+      <ul id="qwert" style="opacity:0; transition: opacity 0.5s;">
+        <li>We strip away details that are unnecessary for solving the problem.</li>
+      </ul>
+      <div id="qwer" style="opacity:0; transition: opacity 0.5s;">
+        <p>We assume ideal conditions:</p>
+        <ul>
+<li>The top is a solid, uniform disc of mass M and radius R</li>
+<li>The stem is massless and rigid</li>
+<li>The tip contacts the floor at a single frictionless point</li>
+<li>The disc spins very fast about its own axis with speed \(\omega\)</li>
+<li>The top leans at a small, steady angle \(\theta\)</li>
+<li>The leaning axis sweeps slowly around the vertical with speed \(\Omega\)</li>
+<li>Air resistance and floor imperfections are ignored</li>
+
+	</ul>
+      </div>
+      <label for="slider">Drag to explore idealization</label>
+      <input type="range" min="0" max="1" step="0.01" value="0" class="slider" id="slider">
+      <button id="nextButton" style="opacity:0; transition: opacity 0.5s;">Next →</button>
+    </div>
+
+    <div class="right">
+      <div id="canvas-wrapper"></div>
+    </div>
+  </div>
+</div>
+
+<script src="i2003.js"></script>
+<script src="i2001.js" defer></script>
+<script src="ideal1left.js" defer></script>
+<script>
+  window.addEventListener("load", () => {
+    const s = document.getElementById("slider");
+    const btn = document.getElementById("nextButton");
+    const qwert = document.getElementById("qwert");
+    const qwer  = document.getElementById("qwer");
+
+    function update() {
+      const t = parseFloat(s.value);
+      btn.style.opacity  = t;
+      qwert.style.opacity = t >= 0.33 ? 1 : 0;
+      qwer.style.opacity  = t >= 0.66 ? 1 : 0;
+    }
+
+    update();
+    s.addEventListener("input", update);
+
+    btn.addEventListener("click", () => {
+      window.location.href = "discretisation.html";
+    });
+  });
+</script>
+</body>
+</html>

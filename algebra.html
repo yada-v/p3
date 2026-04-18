@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Algebra — Why Raindrops Don't Hurt</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.9.0/p5.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .right {
+      align-items: center;
+      justify-content: center;
+      width: 40vw;
+    }
+    .left {
+      width: 60vw;
+    }
+    #canvas-wrapper {
+      position: relative;
+      width: 40vw;
+      height: calc(100vh - calc(140 * 0.078vh));   /* fixed */
+    }
+    #graph, #label {
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+    }
+    #graph  { z-index: 1; }
+    #label  { z-index: 2; pointer-events: none; }
+
+    .latexLabels {
+      position: absolute;
+      transform: translate(-50%, -50%);
+      font-size: calc(0.01178 * 100vh);   /* fixed */
+      margin-left: 70%;
+    }
+
+    .deriv-step {
+      background: #f8f8ff;
+      border-left: calc(3 * 0.078vh) solid #4A90E2;   /* fixed */
+      border-radius: 0 calc(6 * 0.078vh) calc(6 * 0.078vh) 0;
+      padding: calc(8 * 0.078vh) calc(14 * 0.078vh);
+      margin-top: calc(12 * 0.078vh);
+      font-size: calc(0.01178 * 100vh);   /* fixed */
+    }
+
+    .deriv-step .step-label {
+      font-size: calc(0.01178 * 100vh);   /* fixed */
+      font-weight: 600;
+      color: #4A90E2;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      margin-bottom: calc(4 * 0.078vh);
+    }
+
+    .result-box {
+      margin-top: calc(14 * 0.078vh);
+      background: #e9f9f0;
+      border: calc(1.5 * 0.078vh) solid #198754;
+      border-radius: calc(8 * 0.078vh);
+      padding: calc(12 * 0.078vh) calc(16 * 0.078vh);
+      text-align: center;
+    }
+
+    .result-box .res-label {
+      font-size: calc(0.01178 * 100vh);
+      font-weight: 600;
+      color: #198754;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      margin-bottom: calc(6 * 0.078vh);
+    }
+  </style>
+</head>
+<body>
+<div class="main">
+
+  <div class="tab">
+    <img class="logo" src="tifr-logo-black.png" alt="TIFR">
+    <div class="steps">
+      <div class="step done"><img src="sky.webp"><span>Reality</span></div>
+      <div class="step done"><img src="2.webp"><span>Idealization</span></div>
+      <div class="step done"><img src="3.webp"><span>Discretisation</span></div>
+      <div class="step done"><img src="4.webp"><span>Geometry</span></div>
+      <div class="step active"><img src="5.webp"><span>Algebra</span></div>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="left">
+
+
+
+<h2>Algebraic Resolution</h2>
+<p>We now translate the geometry into equations.</p>
+<br>
+<div id="step1">
+  <div class="step-label"> <h5>Torque and Angular Momentum</h5></div>
+  <p>\[ \tau = M g h \sin\theta, \quad L_{\perp} = I \omega \sin\theta \]</p>
+</div>
+
+<div id="step2">
+  <div class="step-label">  <h5>Torque equals rate of change of L</h5></div>
+  <p>\[ \tau = L_{\perp} \Omega \]</p>
+</div>
+
+<div class="deriv-step" id="step3">
+  <div class="step-label">Result — Precession Speed</div>
+  <p>\[ \Omega = \frac{2 g h}{R^2 \omega} \]</p>
+  <p id="step4" style="font-size: calc(0.8 * 2vw); color:#198754; margin-top: calc(6 * 0.078vh);">
+     Precession slows with faster spin and wider disc; quickens with taller stem. Independent of lean angle.
+  </p>
+</div>
+
+
+      <label for="slider">Drag to animate the derivation</label>
+      <input type="range" id="slider" value="0" step="0.005" min="0" max="1" class="slider">
+      <button id="nextButton">↩ Back to Start</button>
+    </div>
+
+    <div class="right">
+      <div id="canvas-wrapper">
+        <div id="graph">
+          <script src="alg.js" defer></script>
+          <script src="a1.js" defer></script>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</body>
+</html>

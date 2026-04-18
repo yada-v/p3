@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Why Raindrops Don't Hurt</title>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="main">
+
+  <!-- NAVIGATION STEPS -->
+  <div class="tab">
+    <img class="logo" src="tifr-logo-black.png" alt="TIFR">
+    <div class="steps">
+      <div class="step active">
+        <img src="sky.webp"><span>Reality</span>
+      </div>
+      <div class="step">
+        <img src="2.webp"><span>Idealization</span>
+      </div>
+      <div class="step">
+        <img src="3.webp"><span>Discretisation</span>
+      </div>
+      <div class="step">
+        <img src="4.webp"><span>Geometry</span>
+      </div>
+      <div class="step">
+        <img src="5.webp"><span>Algebra</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="container">
+
+    <!-- LEFT PANEL – EXPLANATION -->
+    <div class="left">
+
+<h2>Reality Question</h2>
+      <p>                                                 
+A child winds a string around a wooden top and pulls hard, setting it spinning on the floor. At first, it stands perfectly upright. But as it slows down, it begins to lean sideways. Instead of immediately tipping over, the top stays tilted and its tip slowly traces out a wide circle on the floor. </p>
+      <p>
+        Why doesn't it simply fall over?  <strong> And what decides how fast it drifts around in that circle while leaning?
+
+ </strong>        </p>
+      <p>A mathematical model helps answer this.</p>
+
+
+    </div>
+
+    <!-- RIGHT PANEL – IMAGES + BUTTON -->
+    <div class="right">
+      <div class="images_y">
+        <div class="row">
+          <img class="op" src="rain.webp" alt="Raindrop">
+          <img class="op" src="sky.webp" alt="Clouds">
+        </div>
+        <button id="nextButton">
+          Build the mathematical model →
+        </button>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<script>
+  document.getElementById("nextButton").onclick = function () {
+    window.location.href = "ideal.html";
+  };
+</script>
+</body>
+</html>
