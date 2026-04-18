@@ -40,25 +40,26 @@
 
   <div class="container">
     <div class="left">
-      <h2>Geometric Insight</h2>
-      <p>When the top leans, gravity creates a twisting effect that acts sideways—not downward as you might expect.</p>
-      <ul>
-<li>The center of mass is offset horizontally by a distance \(d = h \sin\theta\) from the pivot.</li>
-<li>Gravity pulls down with force Mg, creating a torque \(\tau = Mg h \sin\theta\) that points horizontally, perpendicular to the top's spin axis.</li>
-<li>The spinning top has angular momentum L = I\(\omega\) directed along its tilted axis.</li>
 
-      </ul>
-      <p>
-Because torque changes the direction of angular momentum, not its magnitude, the top's axis slowly rotates around the vertical instead of falling over. In a short time, the angular momentum vector sweeps out a small horizontal angle.
-      </p>
+<h2>Geometric Insight</h2>
+
+<p>When the top leans, gravity produces a twisting effect that acts sideways rather than straight down.</p>
+
+<ul>
+  <li>The center of mass is horizontally offset by \(d = h \sin\theta\) from the pivot.</li>
+  <li>Gravity \(Mg\) creates a torque \(\tau = Mg h \sin\theta\), acting perpendicular to the spin axis.</li>
+  <li>The spinning top has angular momentum \(L = I\omega\) directed along its tilted axis.</li>
+</ul>
 
 <p>
-This sideways torque causes the angular momentum vector to rotate around the vertical axis. 
-The faster the spin (larger \(L\)), the slower this rotation. 
-The stronger the torque (larger \(\tau\)), the faster the rotation. 
-The exact relationship is derived in the next step.
+Torque changes the direction of angular momentum, not its magnitude. As a result, the angular momentum vector slowly rotates, causing the top’s axis to precess around the vertical instead of falling over.
 </p>
-      <label for="slider">Drag to explore the geometry</label>
+
+<p>
+This motion is known as precession, and the quantitative relation between \(\tau\), \(L\), and the precession rate is derived next.
+</p>
+
+	    <label for="slider">Drag to explore the geometry</label>
       <input type="range" id="slider" value="0" step="0.005" min="0" max="1" class="slider">
       <button id="nextButton">Continue →</button>
     </div>
