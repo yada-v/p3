@@ -75,7 +75,6 @@ function draw() {
   t = document.getElementById("slider");
   let s = parseFloat(t.value);
 
-
   let cx = 0;
   let cy = -height / 10;
 
@@ -84,11 +83,11 @@ function draw() {
   let Gscale = 120;
   let Tscale = 100;
 
-
-	fill(255);
-	text('hi',0,0,0);
-
-
+push();
+text('mg', - sin(PI/15)*Lscale, cy + Lscale);
+text('Angular momentum',cx,cy - Gscale);
+text('Torque',cx + Tscale*2,cy);
+pop();
 
   // ground plane
   push();
@@ -144,7 +143,5 @@ rotateZ(PI / 15);
 drawBarCaps(cx - sin(PI/15)*height/10,6,0,6);
 pop();
 
-push();
-text('mg', 0, 0);
-pop();
+
 }
