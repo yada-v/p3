@@ -9,7 +9,9 @@ font = loadFont('Inconsolata.otf');
 
 function setup() {
   let rightDiv = document.getElementById("canvas-wrapper");
-  let canvas = createCanvas(rightDiv.clientWidth, rightDiv.clientWidth, WEBGL);
+  let size = Math.min(rightDiv.clientWidth, rightDiv.clientHeight);
+  size = Math.max(size, 300);
+  let canvas = createCanvas(size, size, WEBGL);
   canvas.parent('canvas-wrapper');
 
 	textFont(font);
