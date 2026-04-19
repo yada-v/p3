@@ -87,7 +87,8 @@ push();
 text('mg', - sin(PI/15)*Lscale, cy + Lscale);
 text('Angular momentum',cx,cy - Gscale);
 text('Torque',cx + Tscale*2,cy);
-text('d',- sin(PI/15)*height/20,6);
+let j = -sin(PI/15)*height/20;
+text('d',j,6);
 );
 pop();
 
