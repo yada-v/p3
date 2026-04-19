@@ -22,6 +22,10 @@
       width: 100%; height: 100%;
       z-index: 1;
     }
+
+    #abc1, #abc2, #abc3 {
+    transition: opacity 0.2s ease;
+}
   </style>
 </head>
 <body>
@@ -45,17 +49,17 @@
 
 <p>When the top leans, gravity produces a twisting effect that acts sideways rather than straight down.</p>
 
-<ul>
+<ul id="abc1">
   <li>The center of mass is horizontally offset by \(d = h \sin\theta\) from the pivot.</li>
   <li>Gravity \(Mg\) creates a torque \(\tau = Mg h \sin\theta\), acting perpendicular to the spin axis.</li>
   <li>The spinning top has angular momentum \(L = I\omega\) directed along its tilted axis.</li>
 </ul>
 
-<p>
+<p id="abc2">
 Torque changes the direction of angular momentum, not its magnitude. As a result, the angular momentum vector slowly rotates, causing the top’s axis to precess around the vertical instead of falling over.
 </p>
 
-<p>
+<p id="abc3">
 This motion is known as precession, and the quantitative relation between \(\tau\), \(L\), and the precession rate is derived next.
 </p>
 
@@ -69,6 +73,7 @@ This motion is known as precession, and the quantitative relation between \(\tau
         <div id="graph">
           <script src="geom.js" defer></script>
           <script src="g1.js" defer></script>
+	  <script src="g2.js" defer></script>
         </div>
       </div>
     </div>
