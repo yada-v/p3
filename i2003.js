@@ -1,57 +1,52 @@
 let img;
 
-function preload(){
+function preload() {
   img = loadImage('sky.webp');
 }
 
 let t;
+
 function setup() {
-        let rightDiv = document.getElementById("canvas-wrapper");
-//check the clientwidtb/height.need to be changed to sqhare with hwight or width whichever is smaller
-        let canvas = createCanvas(rightDiv.clientWidth, rightDiv.clientWidth , WEBGL);
-          canvas.parent('canvas-wrapper');
+  let rightDiv = document.getElementById("canvas-wrapper");
+  // Use the smaller dimension for a square canvas
+  let size = Math.min(rightDiv.clientWidth, rightDiv.clientHeight);
+  size = Math.max(size, 300);
+  let canvas = createCanvas(size, size, WEBGL);
+  canvas.parent('canvas-wrapper');
 }
 
-
-
-
 function draw() {
-          background(50);
+  background(50);
 
-        t = document.getElementById("slider");
-        let  s = parseFloat(t.value);
+  t = document.getElementById("slider");
+  let s = parseFloat(t.value);
 
-
-
-tint(255, 255*(1-s));
+  // --- Draw the background image (correctly centered in WEBGL) ---
+  tint(255, 255 * (1 - s));
   imageMode(CENTER);
-  image(img, width/2, height/2, width, height);
+  // In WEBGL, (0,0) is the canvas center
+  image(img, 0, 0, width, height);
 
-push();
-rotateX(PI/2);
-rotateY(0);
-rotateZ(0);
-fill(255,255*s);
-plane(500,500);
-pop();
+  // --- 3D shapes (like your original) ---
+  push();
+  rotateX(PI / 2);
+  rotateY(0);
+  rotateZ(0);
+  fill(255, 255 * s);
+  plane(500, 500);
+  pop();
 
+  rotateY(frameCount * 0.11);
+  rotateZ(-PI / 30);
 
-
-
-rotateY(frameCount * 0.11);
-rotateZ(-PI/30);
-
-push();
-fill(255, 255*s);
-stroke(0,255*s);
-translate(0,-height/10,0);
-cylinder(width/5, height/40);
-noStroke();
-cylinder(width/160, height/5);
-
-pop();
-
-
+  push();
+  fill(255, 255 * s);
+  stroke(0, 255 * s);
+  translate(0, -height / 10, 0);
+  cylinder(width / 5, height / 40);
+  noStroke();
+  cylinder(width / 160, height / 5);
+  pop();
 }
 
 function windowResized() {
