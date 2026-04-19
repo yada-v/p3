@@ -49,27 +49,19 @@
 
   <div class="container">
     <div class="left">
-<h2>Idealization</h2>
-
-<p>What determines how fast it drifts around in a circle while leaning?</p>
-
-<ul id="qwert" style="opacity:0; transition: opacity 0.5s;">
-  <li>We ignore details that do not affect the essential physics of the motion.</li>
-</ul>
-
-<div id="qwer" style="opacity:0; transition: opacity 0.5s;">
-  <p>We model the system under ideal conditions:</p>
-  <ul>
-    <li>The top is a uniform rigid disc of mass M and radius R.</li>
-    <li>The stem is massless and rigid.</li>
-    <li>The tip touches the ground at a single frictionless point.</li>
-    <li>The disc spins rapidly about its symmetry axis with angular speed \(\omega\).</li>
-    <li>The tilt angle \(\theta\) is small and approximately constant.</li>
-    <li>The axis of the top precesses slowly about the vertical with angular speed \(\Omega\).</li>
-    <li>Air resistance and surface imperfections are neglected.</li>
-  </ul>
-</div>
-	</ul>
+      <h2>Idealization</h2>
+      <p>Consider two large, parallel plates separated by a small gap filled with fluid.</p>
+      <ul id="qwert" style="opacity:0; transition: opacity 0.5s;">
+        <li>We strip away details that are unnecessary for solving the problem.</li>
+      </ul>
+      <div id="qwer" style="opacity:0; transition: opacity 0.5s;">
+        <p>We assume ideal conditions:</p>
+        <ul>
+          <li>Fluid completely fills the gap</li>
+          <li>Bottom plate fixed; top plate moves steadily</li>
+          <li>No-slip at both boundaries</li>
+          <li>Laminar, steady flow</li>
+        </ul>
       </div>
       <label for="slider">Drag to explore idealization</label>
       <input type="range" min="0" max="1" step="0.01" value="0" class="slider" id="slider">

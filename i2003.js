@@ -55,3 +55,4 @@ function windowResized() {
   size = Math.max(size, 300);
   resizeCanvas(size, size);
 }
+
