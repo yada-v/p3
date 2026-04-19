@@ -3,7 +3,9 @@ let t;
 function setup() {
         let rightDiv = document.getElementById("canvas-wrapper");
 //check the clientwidtb/height.need to be changed to sqhare with hwight or width whichever is smaller
-        let canvas = createCanvas(rightDiv.clientWidth, rightDiv.clientWidth , WEBGL);
+  let size = Math.min(rightDiv.clientWidth, rightDiv.clientHeight);
+  size = Math.max(size, 300);
+  let canvas = createCanvas(size, size, WEBGL);
           canvas.parent('canvas-wrapper');
 }
 
