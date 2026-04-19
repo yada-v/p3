@@ -21,17 +21,18 @@ function draw() {
   t = document.getElementById("slider");
   let s = parseFloat(t.value);
 
-  // --- Draw the background image (correctly centered in WEBGL) ---
+  
   tint(255, 255 * (1 - s));
   imageMode(CENTER);
   // In WEBGL, (0,0) is the canvas center
   image(img, 0, 0, width, height);
 
-  // --- 3D shapes (like your original) ---
+  
   push();
   rotateX(PI / 2);
   rotateY(0);
   rotateZ(0);
+stroke(0,255*s);
   fill(255, 255 * s);
   plane(500, 500);
   pop();
