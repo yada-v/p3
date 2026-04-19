@@ -89,7 +89,7 @@ text('Angular momentum',cx,cy - Gscale);
 text('Torque',cx + Tscale*2,cy);
 let j = -sin(PI/15)*height/20;
 text('d',j,6);
-);
+
 pop();
 
   // ground plane
