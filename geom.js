@@ -13,7 +13,7 @@ function setup() {
   canvas.parent('canvas-wrapper');
 
 	textFont(font);
-  textSize(28);
+  textSize(16);
   textAlign(CENTER, CENTER);
 }
 
@@ -87,6 +87,7 @@ push();
 text('mg', - sin(PI/15)*Lscale, cy + Lscale);
 text('Angular momentum',cx,cy - Gscale);
 text('Torque',cx + Tscale*2,cy);
+text('d',0,0);
 pop();
 
   // ground plane
