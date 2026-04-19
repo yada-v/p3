@@ -87,7 +87,8 @@ push();
 text('mg', - sin(PI/15)*Lscale, cy + Lscale);
 text('Angular momentum',cx,cy - Gscale);
 text('Torque',cx + Tscale*2,cy);
-text('d',0,0);
+text('d',(cx - sin(PI/15)*height/10)/2,6);
+);
 pop();
 
   // ground plane
