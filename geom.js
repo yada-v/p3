@@ -1,9 +1,20 @@
 let t;
+let font;
+
+function preload(){
+
+font = loadFont('Inconsolata.otf');
+}
+
 
 function setup() {
   let rightDiv = document.getElementById("canvas-wrapper");
   let canvas = createCanvas(rightDiv.clientWidth, rightDiv.clientWidth, WEBGL);
   canvas.parent('canvas-wrapper');
+
+	textFont(font);
+  textSize(28);
+  textAlign(CENTER, CENTER);
 }
 
 /* -------------------------
@@ -131,5 +142,9 @@ drawArrow2D(
 push();
 rotateZ(PI / 15);
 drawBarCaps(cx - sin(PI/15)*height/10,6,0,6);
+pop();
+
+push();
+text('mg', 0, 0);
 pop();
 }
